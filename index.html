@@ -3,14 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Bot</title>
+    <title>Telegram Bot Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+			text-align:center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #chatLog {
+            width: 30%;
+            height: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            resize: none;
+        }
+
+        #messageInput {
+            width: calc(30%);
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #sendBtn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #sendBtn:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
     <h1>Telegram Bot Interface</h1>
-    <textarea id="chatLog" rows="10" cols="50" readonly></textarea><br><br>
-    <input type="text" id="messageInput" placeholder="Type your message">
+    
+    <!-- Chat log display area -->
+    <textarea id="chatLog" readonly></textarea><br><br>
+    
+    <!-- Message input and send button -->
+    <input type="text" id="messageInput" placeholder="Type your message here">
+	<br><br>
     <button id="sendBtn">Send Message</button>
 
+    <!-- JavaScript -->
     <script src="server.js"></script>
 </body>
 </html>
