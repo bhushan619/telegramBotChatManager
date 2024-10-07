@@ -7,31 +7,115 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Layout styling */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .main {
+            flex: 1;
             padding: 20px;
-			text-align:center;
         }
 
-        h1 {
-            color: #333;
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            border-left: 1px solid #ccc;
+            padding: 20px;
         }
 
-        #chatLog {
-            width: 30%;
-            height: 300px;
-            padding: 10px;
+        /* Sidebar styling */
+        .sidebar h2 {
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        }
+
+        .user-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .user-list li {
+            padding: 10px;
             background-color: #fff;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .user-list li:hover {
+            background-color: #ddd;
+        }
+
+        /* Tabs styling */
+        .tab-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            background-color: #ddd;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom: none;
+        }
+
+        .tab button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: red;
+            margin-left: 10px;
+        }
+
+        .chat-area {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #fff;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-area textarea {
+            width: 100%;
+            height: 100%;
             resize: none;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #f4f4f4;
+        }
+
+        /* Input section */
+        .input-section {
+            display: flex;
+            margin-top: 10px;
         }
 
         #messageInput {
-            width: calc(30%);
+            flex: 1;
             padding: 10px;
-            margin-right: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -42,6 +126,7 @@
             color: white;
             border: none;
             border-radius: 4px;
+            margin-left: 10px;
             cursor: pointer;
         }
 
@@ -51,17 +136,40 @@
     </style>
 </head>
 <body>
-    <h1>Telegram Bot Interface</h1>
-    
-    <!-- Chat log display area -->
-    <textarea id="chatLog" readonly></textarea><br><br>
-    
-    <!-- Message input and send button -->
-    <input type="text" id="messageInput" placeholder="Type your message here">
-	<br><br>
-    <button id="sendBtn">Send Message</button>
+    <div class="container">
+        <!-- Main content area with tabs and chat area -->
+        <div class="main">
+            <h1>Telegram Bot Interface</h1>
+
+            <!-- Tabs for each user -->
+            <div class="tab-container">
+                <div class="tabs" id="tabs">
+                    <!-- Tabs will be dynamically created here -->
+                </div>
+
+                <!-- Chat log area for each user (dynamically updated based on selected tab) -->
+                <div class="chat-area" id="chatArea">
+                    <!-- Chat logs will be dynamically shown here -->
+                </div>
+
+                <!-- Input section for sending messages -->
+                <div class="input-section">
+                    <input type="text" id="messageInput" placeholder="Type your message here">
+                    <button id="sendBtn">Send Message</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar with user list -->
+        <div class="sidebar">
+            <h2>Users</h2>
+            <ul class="user-list" id="userList">
+                <!-- User list will be dynamically populated here -->
+            </ul>
+        </div>
+    </div>
 
     <!-- JavaScript -->
-    <script src="server.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
