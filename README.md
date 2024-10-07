@@ -1,5 +1,7 @@
 # TelegramBot POC for sending and receiving users messages.
 
+Open command prompt or any other command line application
+
 step 1 : git clone https://github.com/bhushan619/telegramBot.git
 
 step 2 : install https-server :- npm install https-server
