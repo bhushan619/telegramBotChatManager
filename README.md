@@ -10,6 +10,6 @@ step 3 : start https server :- npm start
 
 step 4 : go to http://127.0.0.1:8069/ and wait for message from user
 
-step 5 : go to telegram and add the Tbay bot https://t.me/[your bot username]
+step 5 : go to telegram and add the Tbay bot https://t.me/[your_bot_username]
 
 step 6 : send message from bot and receive at http://127.0.0.1:8069/
