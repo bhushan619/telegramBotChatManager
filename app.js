@@ -1,5 +1,5 @@
 // Define your bot token (replace with your actual bot token)
-const BOT_TOKEN = 'YOUR_TELEGRAM_API_TOKEN';
+const BOT_TOKEN = '[your_bot_token]';
 
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/`;
 let lastUpdateId = 0;
@@ -33,7 +33,7 @@ function updateUserList() {
 
     Object.keys(users).forEach(chatId => {
         const li = document.createElement('li');
-        const username = users[chatId].username || `User ID: ${chatId}`;  // Show username if available
+        const username = `Username: ` + users[chatId].username || `User ID: ${chatId}`;  // Show username if available
         li.textContent = username;
         li.addEventListener('click', () => openUserTab(chatId));
         userList.appendChild(li);

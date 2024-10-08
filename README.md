@@ -2,7 +2,7 @@
 
 Open command prompt or any other command line application
 
-step 1 : git clone https://github.com/bhushan619/telegramBot.git
+step 1 : git clone https://github.com/bhushan619/telegramBotChatManager.git
 
 step 2 : cd telegramBot
 
