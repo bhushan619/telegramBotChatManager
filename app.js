@@ -1,5 +1,5 @@
 // Define your bot token (replace with your actual bot token)
-const BOT_TOKEN = '7420341664:AAHNc3LNfLxsPk6O7HCmlbQt4P_8vrNDJj8';
+const BOT_TOKEN = 'YOUR_TELEGRAM_API_TOKEN';
 
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/`;
 let lastUpdateId = 0;
