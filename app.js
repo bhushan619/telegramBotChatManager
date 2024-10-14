@@ -1,6 +1,5 @@
 // Define your bot token (replace with your actual bot token)
-const BOT_TOKEN = '7420341664:AAHNc3LNfLxsPk6O7HCmlbQt4P_8vrNDJj8';
-
+const BOT_TOKEN = 'YOUR_TELEGRAM_API_TOKEN';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/`;
 let lastUpdateId = 0;
 let users = {};  // To store multiple users with their chatId, username, and chat logs
@@ -67,7 +66,7 @@ function openUserTab(chatId) {
         tab.className = 'tab active';
         tab.id = `tab-${chatId}`;
         const username = users[chatId].username || `User ID: ${chatId}`;
-        tab.innerHTML = `${username} <button onclick="closeTab('${chatId}')">x</button>`;
+        tab.innerHTML = `${username} <button class="btn btn-danger btn-sm" onclick="closeTab('${chatId}')">X</button>`;
         tab.addEventListener('click', () => switchTab(chatId));
         tabs.appendChild(tab);
     }
@@ -123,7 +122,7 @@ function sendMessage(chatId, message) {
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            logEvent(chatId, `<p><b>You</b>: ${message}</p>`);
+            logEvent(chatId, `<p style="text-align:right"><b>You</b>: ${message}</p>`);
         } else {
             logEvent(chatId, `<p>Error sending message: ${data.description}</p>`);
         }
@@ -145,7 +144,7 @@ function sendMedia(chatId, file, type) {
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            logEvent(chatId, `<p><b>You</b>: Sent ${type === 'sendPhoto' ? 'an image' : 'a video'}</p>`);
+            logEvent(chatId, `<p style="text-align:right"><b>You</b>: Sent ${type === 'sendPhoto' ? 'an image' : 'a video'}</p>`);
         } else {
             logEvent(chatId, `<p>Error sending media: ${data.description}</p>`);
         }
