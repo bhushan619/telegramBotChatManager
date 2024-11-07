@@ -8,7 +8,7 @@ step 2 : cd telegramBot
 
 step 3 : npm install
 
-step 4 : open app.js file and replace 'YOUR_TELEGRAM_API_TOKEN' on line number 2 with your actual bot token
+step 4 : open app.js file and replace 'YOUR_TELEGRAM_API_TOKEN' on line number 11 with your actual bot token
 
 On command line application
 
